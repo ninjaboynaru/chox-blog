@@ -14,7 +14,12 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		posts: [],
 		categories: [],
+		showNotes: false
 	};
+
+	if(typeof req.query.showNotes != 'undefined') {
+		locals.data.showNotes = true;
+	}
 
 	// Load all categories
 	view.on('init', function (next) {
@@ -70,6 +75,12 @@ exports = module.exports = function (req, res) {
 
 		if (locals.data.category) {
 			q.where('categories').in([locals.data.category]);
+		}
+		if(locals.data.showNotes) {
+			q.where('isNote').eq(true);
+		}
+		else {
+			q.where('isNote').in([false, undefined, null]);
 		}
 
 		q.exec(function (err, results) {
