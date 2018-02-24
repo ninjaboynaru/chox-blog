@@ -24,9 +24,17 @@
 			<div style="margin-top: 70px;" class="list-group">
 				<a href="/blog" class="active list-group-item">All Categories</a>
 				{{# each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
+				<a href="{{categoryUrl key ../data.showNotes}}" class="false list-group-item">{{name}}</a>
 				{{/each}}
 			</div>
+		</div>
+		<div class="col-sm-4 col-md-3">
+			{{#if data.showNotes}}
+				<a href='/blog'><button class='btn btn-primary'>Show posts</button></a>
+			{{else}}
+				<a href='/blog/?showNotes'><button class='btn btn-primary'>Show Notes</button></a>
+			{{/if}}
+
 		</div>
 	</div>
 	{{>pagination}}
