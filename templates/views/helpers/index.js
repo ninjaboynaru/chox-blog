@@ -203,8 +203,9 @@ module.exports = function () {
 	};
 
 	// create the category url for a blog-category page
-	_helpers.categoryUrl = function (categorySlug, options) {
-		return ('/blog/' + categorySlug);
+	_helpers.categoryUrl = function (categorySlug, showNotes, options) {
+		const query = showNotes == true ? '/?showNotes' : '';
+		return ('/blog/' + categorySlug + query);
 	};
 
 	// ### Pagination Helpers
