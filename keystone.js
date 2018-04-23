@@ -65,8 +65,9 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	posts: ['posts', 'post-categories'],
-	users: 'users',
+	content: ['posts', 'notes'],
+	categories: ['post-categories', 'note-categories', 'note-subcategories'],
+	users: ['users'],
 });
 
 // Use mongo for persisting session data in production
