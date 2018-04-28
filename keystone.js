@@ -46,6 +46,11 @@ keystone.init({
 	'user model': 'User',
 });
 
+// Allow scss code to import foundation styles
+keystone.set('sass options', {
+	includePaths: ['./node_modules/foundation-sites/scss']
+});
+
 // Load your project's Models
 keystone.import('models');
 
