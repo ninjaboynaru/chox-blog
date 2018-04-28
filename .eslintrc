@@ -1,3 +1,7 @@
 {
-    "extends": "keystone"
+    "extends": "keystone",
+    "rules": {
+        "line-break-style": 0,
+        "no-new-require": 0
+    }
 }

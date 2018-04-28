@@ -9,26 +9,25 @@ var Note = new keystone.List('Note', {
 
 Note.add({
 	title: { type: String, required: true },
-	publishedDate: { type: Types.Date, index: true, required:true, initial:true },
-	grouping: { type: String, index:true },
+	publishedDate: { type: Types.Date, index: true, required: true, initial: true },
+	grouping: { type: String, index: true },
 	content: {
 		body: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-	category: { type: Types.Relationship, ref:'NoteCategory', required:true, initial:true, many: false, index:true },
-	subcategory: {type: Types.Relationship, ref:'NoteSubcategory', required:true, initial:true, many:false }
+	category: { type: Types.Relationship, ref: 'NoteCategory', required: true, initial: true, many: false, index: true },
+	subcategory: { type: Types.Relationship, ref: 'NoteSubcategory', required: true, initial: true, many: false },
 });
 
 // ensure that the selected subcategory actually belongs to the selected category
-Note.schema.path('subcategory').validate(function(value, callback){
-	keystone.list('NoteSubcategory').model.find({_id:value}).exec(function(error, result){
-		if(error) {
+Note.schema.path('subcategory').validate(function (value, callback) {
+	keystone.list('NoteSubcategory').model.find({ _id: value }).exec(function (error, result) {
+		if (error) {
 			throw error;
+		}
+		else if (result.length === 0) {
 			callback(false);
 		}
-		else if(result.length === 0) {
-			callback(false);
-		}
-		else if(result[0].parent.equals(this.category) === false) {
+		else if (result[0].parent.equals(this.category) === false) {
 			callback(false);
 		}
 		else {

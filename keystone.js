@@ -29,12 +29,12 @@ keystone.init({
 	}).engine,
 
 	'wysiwyg override toolbar': false,
-    'wysiwyg menubar': true,
-    'wysiwyg skin': 'lightgray',
-    'wysiwyg additional buttons': 'searchreplace visualchars,'
+	'wysiwyg menubar': true,
+	'wysiwyg skin': 'lightgray',
+	'wysiwyg additional buttons': 'searchreplace visualchars,'
      + ' charmap ltr rtl pagebreak paste, forecolor backcolor,'
-     +' emoticons media, preview print, codesample ',
-    'wysiwyg additional plugins': 'example, table, advlist, anchor,'
+     + ' emoticons media, preview print, codesample ',
+	'wysiwyg additional plugins': 'example, table, advlist, anchor,'
      + ' autolink, autosave, charmap, contextmenu, '
      + ' directionality, emoticons, fullpage, hr, media, pagebreak,'
      + ' paste, preview, print, searchreplace, textcolor,'
@@ -71,7 +71,7 @@ keystone.set('nav', {
 });
 
 // Use mongo for persisting session data in production
-if(process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
 	keystone.set('session store', 'mongo');
 }
 

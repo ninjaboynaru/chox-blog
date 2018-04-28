@@ -17,11 +17,11 @@ Post.add({
 		type: Types.Select,
 		options: 'draft, published, archived',
 		default: 'draft',
-		required:true,
-		initial:true,
-		index: true
+		required: true,
+		initial: true,
+		index: true,
 	},
-	author: { type: Types.Relationship, ref: 'User', index: true, required:true, initial:true },
+	author: { type: Types.Relationship, ref: 'User', index: true, required: true, initial: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	image: { type: Types.CloudinaryImage },
 	content: {
@@ -34,9 +34,9 @@ Post.add({
 Post.schema.virtual('content.full').get(function () {
 	return this.content.extended || this.content.brief;
 });
-Post.schema.methods.isPublished = function isPublished() {
+Post.schema.methods.isPublished = function isPublished () {
 	return this.state === 'published';
-}
+};
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();
