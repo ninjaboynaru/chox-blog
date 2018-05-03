@@ -10,7 +10,6 @@ var Note = new keystone.List('Note', {
 Note.add({
 	title: { type: String, required: true },
 	publishedDate: { type: Types.Date, index: true, required: true, initial: true },
-	grouping: { type: String, index: true },
 	content: {
 		body: { type: Types.Html, wysiwyg: true, height: 400 },
 	},

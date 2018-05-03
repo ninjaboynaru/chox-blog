@@ -1,4 +1,7 @@
 {
+    "env": {
+        "jquery": true    
+    },
     "extends": "keystone",
     "rules": {
         "line-break-style": 0,

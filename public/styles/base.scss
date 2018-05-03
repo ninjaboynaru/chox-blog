@@ -1,0 +1,100 @@
+/*******************
+** BASE
+*******************/
+html, body {
+	width: 100%;
+}
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+}
+
+//------
+// Overide Foundation 6 <code> border for prisim.css
+//------
+code {
+	border: none;
+}
+
+/*******************
+** LAYOUT
+*******************/
+#header {
+	margin-top: 30px;
+}
+
+/*******************
+** THEME
+*******************/
+.featured {
+	font-weight:bold;
+	color: gold;
+}
+
+.primary-menu {
+ 	li.active > a{
+		color:white;
+		background-color: $primary-color;
+	}
+	a {
+		border-radius: 8px;
+		&:hover {
+			background-color: $light-gray;
+		}
+	}
+}
+
+.blog-img {
+	margin-bottom: 2rem;
+	box-shadow: 0 0 4px 0 rgba($black, 0.5);
+}
+
+/*******************
+** BASE MODULE
+*******************/
+.hr-dashed{
+	border-style: dashed;
+}
+.pagination li.current a {
+	&:hover {
+		background-color: initial;
+	}
+	color: $white;
+	padding: 0;
+}
+
+/*******************
+** MODULE
+*******************/
+.site-center {
+	width: 100%;
+	max-width: $global-width;
+	margin: rem-calc(62px) auto;
+}
+.site-center-half {
+	@extend .site-center;
+	max-width: $global-width/2;
+}
+.site-center-1-5 {
+	@extend .site-center;
+	max-width: $global-width/1.5;
+}
+.site-container {
+	@extend .site-center;
+	margin: rem-calc(32px) auto;
+	padding: 0 $container-padding;
+}
+.page-intro {
+	color: $dark-gray;
+	font-size: 1.2rem;
+}
+
+.brand-text {
+	color: black;
+	font-family: 'Righteous';
+	font-size: $brand-size;
+	letter-spacing: $header-letter-spacing;
+	font-weight: bold;
+}

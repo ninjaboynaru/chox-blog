@@ -1,0 +1,18 @@
+<article class='site-container'>
+	<link href='/styles/vendor/prism.css' rel='stylesheet'>
+	<header>
+		<h1>{{data.post.title}}</h1>
+		<h5>
+			{{{categoryList section data.post.categories prefix='Posted in '}}}
+		</h5>
+		<p><a href='/blog'>&larr; back to the blog</a></p>
+	</header>
+	<hr>
+	<div>
+		{{#if data.post.image}}
+		<img src='{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}' class='blog-img'>
+		{{/if}}
+		{{{data.post.content.extended}}}
+	</div>
+	<script src='/js/vendor/prism.js'></script>
+</article>

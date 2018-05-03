@@ -1,0 +1,15 @@
+.note-card {
+	@include xy-cell($gutter-output:false);
+	@include breakpoint(medium) {
+		@include xy-cell(6, $gutter-position:right);
+	}
+
+	margin-bottom: $global-margin * 3;
+
+	&__title {
+		@extend .post-card__title;
+	}
+	&__meta {
+		font-size: 0.8rem;
+	}
+}

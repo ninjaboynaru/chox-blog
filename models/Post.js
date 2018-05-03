@@ -12,6 +12,7 @@ var Post = new keystone.List('Post', {
 });
 
 Post.add({
+	isNote: { type: Types.Boolean },
 	title: { type: String, required: true },
 	state: {
 		type: Types.Select,
@@ -23,12 +24,13 @@ Post.add({
 	},
 	author: { type: Types.Relationship, ref: 'User', index: true, required: true, initial: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	featured: { type: Types.Boolean, default: false },
 	image: { type: Types.CloudinaryImage },
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	categories: { type: Types.Relationship, ref: 'PostCategory', many: true, required: true, initial: true },
 });
 
 Post.schema.virtual('content.full').get(function () {
