@@ -1,0 +1,53 @@
+<nav>
+	<ul class="pagination" role='navigation' aria-label='Pagination'>
+		{{!-- Inline partial for screen readers--}}
+		{{#*inline "sr-page-txt"}}
+		<span class="show-for-sr">page</span>
+		{{/inline}}
+
+		{{!-- Render previous button
+		To accomodate Foundation 6 pagination structure -> Do not render <a> element if
+		the "disabled" class exists on the <li> element
+		--}}
+		<li class="pagination-previous {{# unless data.content.previous }}disabled{{/unless}}">
+			{{# if data.content.previous}}
+			<a href="{{paginationPreviousUrl
+				section
+				data.content.previous
+				data.content.totalPages
+				filters.category
+				filters.subcategory}}"
+				aria-label="Previous page"
+				>
+				Previous {{> sr-page-txt}}
+			</a>
+			{{else}}
+			Previous {{> sr-page-txt}}
+			{{/if}}
+		</li>
+
+		{{{paginationNavigation section data.content 'current' filters.category filters.subcategory}}}
+
+
+		{{!-- Render next button
+		To accomodate Foundation 6 pagination structure -> Do not render <a> element if
+		the "disabled" class exists on the <li> element
+		--}}
+		<li class="pagination-next {{# unless data.content.next }}disabled{{/unless}}">
+			{{# if data.content.next}}
+			<a href="{{paginationNextUrl
+				section
+				data.content.next
+				data.content.totalPages
+				filters.category
+				filters.subcategory}}"
+				aria-label="Next page"
+				>
+				Next {{> sr-page-txt}}
+			</a>
+			{{else}}
+			Next {{> sr-page-txt}}
+			{{/if}}
+		</li>
+	</ul>
+</nav>

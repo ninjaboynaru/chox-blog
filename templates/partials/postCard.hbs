@@ -1,0 +1,22 @@
+<section class='post-card'>
+	<h4 class='post-card__title'><a href="{{postUrl slug}}">{{title}}</a></h4>
+	<div class='post-card__meta'>
+		<span>{{date publishedDate}}</span>
+		{{# if featured}}
+		<span class='badge featured'><i class='icon-star'></i></span>
+		{{/if}}
+	</div>
+
+	<hr>
+
+	<div class='post-card__brief'>
+		<p>{{{content.brief}}}</p>
+	</div>
+	{{# if image.url}}
+	<div class='post-card__img'>
+		<img src="{{{cloudinaryUrl image }}}">
+	</div>
+	{{/if}}
+
+	<a href='{{postUrl slug}}' class='button'>Read more</a>
+</section>

@@ -15,16 +15,19 @@ keystone.init({
 	'brand': 'Chox',
 
 	'sass': 'public',
+	'sass options': {
+		includePaths: ['./node_modules/foundation-sites/scss'],
+	},
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
 
 	'custom engine': handlebars.create({
-		layoutsDir: 'templates/views/layouts',
-		partialsDir: 'templates/views/partials',
+		layoutsDir: 'templates/layouts',
+		partialsDir: 'templates/partials',
 		defaultLayout: 'default',
-		helpers: new require('./templates/views/helpers')(),
+		helpers: new require('./templates/helpers')(),
 		extname: '.hbs',
 	}).engine,
 
@@ -44,11 +47,6 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-});
-
-// Allow scss code to import foundation styles
-keystone.set('sass options', {
-	includePaths: ['./node_modules/foundation-sites/scss']
 });
 
 // Load your project's Models

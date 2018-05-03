@@ -1,0 +1,39 @@
+.post-card {
+	margin-bottom: 2rem;
+	@include xy-cell($gutter-output:false);
+
+	hr {
+		margin: 12px 0;
+	}
+
+	&__title {
+		font-family: 'Righteous'
+	}
+
+
+	&__meta {
+		//--------
+		// <i> for an icon (intended for a gold "featured" icon)
+		//--------
+		i {
+			color:gold;
+		}
+
+		span {
+			margin: $global-margin;
+			margin-left:0;
+			@include breakpoint(medium) {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__brief {
+	}
+
+	&__img {
+		@extend .blog-img;
+	}
+
+}

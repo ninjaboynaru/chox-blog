@@ -1,0 +1,96 @@
+// source link https://foundation.zurb.com/building-blocks/blocks/responsive-blog-footer.html
+
+
+.site-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.site-footer {
+    $footer-padding: 2rem;
+    $footer-bottom-margin: $footer-padding;
+
+    margin-top: auto;
+    padding: $footer-padding $footer-padding 12px $footer-padding;
+    background: darken($dark-gray, 25%);
+    color: white;
+
+    p {
+        color: $dark-gray;
+    }
+    a {
+        display:inline-block !important;
+        padding-left:0 !important;
+    }
+    li {
+        letter-spacing: $header-letter-spacing;
+    }
+
+    //--------
+    // everything in the footer --> nested in --> __content
+    //-------
+    &__content {
+        @include xy-grid-container;
+    }
+
+    //--------
+    // __links --> after --> __main
+    //-------
+    &__links {
+        margin-bottom: 2rem;
+        ul {
+            @include menu-base();
+        }
+    }
+
+    //--------
+    // __about and __contact --> nested in --> __main
+    //-------
+    &__main {
+        @include xy-grid(horizontal, true);
+        @include xy-gutters($negative:true);
+    }
+
+    &__about {
+        margin-bottom: 2rem;
+        @include xy-cell(8);
+        @include breakpoint(small down) {
+            @include xy-cell();
+        }
+
+        &__contents {
+            @include xy-grid(horizontal, false);
+            @include xy-gutters($negative:true);
+        }
+        &__img {
+            @include xy-cell(4);
+            @include breakpoint(small down) {
+                display: none;
+            }
+
+        }
+        &__txt {
+            @include xy-cell(8);
+            @include breakpoint(small down) {
+                @include xy-cell();
+            }
+        }
+    }
+    &__contact {
+        margin-bottom: 2rem;
+
+        @include xy-cell(4);
+        @include breakpoint(small down) {
+            @include xy-cell();
+        }
+
+        @include breakpoint(small only) {
+            @include xy-cell(12);
+        }
+        &__list {
+            @include menu-base();
+            @include menu-direction(vertical);
+        }
+    }
+
+
+}

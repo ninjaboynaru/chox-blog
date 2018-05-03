@@ -1,0 +1,39 @@
+.content {
+	@include xy-grid(horizontal, true);
+	@include xy-gutters($negative:true);
+
+	justify-content:space-between;
+
+	&__intro {
+		@include xy-cell();
+	}
+
+	&__items, &__category {
+		@include xy-cell();
+	}
+	&__items {
+		@include xy-grid($wrap:true);
+
+		@include breakpoint(medium) {
+			@include xy-cell(8);
+		}
+	}
+	&__category {
+		@include breakpoint(medium) {
+			@include xy-cell(4);
+		}
+		ul {
+			@include menu-base();
+			@include menu-direction(vertical);
+			ul {
+				@include menu-base();
+				@include menu-direction(vertical);
+				@include menu-nested();
+			}
+		}
+	}
+
+	&__pagination {
+		@include xy-cell();
+	}
+}

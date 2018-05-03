@@ -1,9 +1,6 @@
+@import 'partials/manifest';
 @import "foundation";
-@import "partials/variables";
+@include foundation-everything($prototype:true);
+@import 'fonts/manifest';
 @import 'components/manifest';
 @import "base";
-
-.tlst {
-	color:red;
-	font-weight:bold;
-}

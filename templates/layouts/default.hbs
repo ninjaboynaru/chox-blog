@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Chox.js</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link href="/styles/style.css" rel="stylesheet">
+
+	{{{isAdminEditorCSS user}}}
+
+</head>
+<body class='site-footer-wrapper'>
+	<header>
+		{{!-- Button to toggle mobile navigation--}}
+		<div class='title-bar site-mobile-bar' data-responsive-toggle='site-nav' data-hide-for='medium'>
+			<div class='title-bar-title brand-text'>{{siteInfo.siteTitle}}</div>
+			<button class='menu-icon' type='button' data-toggle='site-nav'></button>
+		</div>
+
+		{{!-- Primary navigation section (contains mobile nav also) --}}
+		<div class='site-nav-wrapper'>
+			<section class='site-nav top-bar' id='site-nav'>
+				<a href='/' class='brand-text top-bar-left show-for-medium'>ChoxJS</a>
+
+				<nav class='top-bar-right'>
+					<ul class=''>
+						{{!-- Create site nav links --}}
+						{{# each navLinks}}
+						<li {{#ifeq ../section key}}class='is-active'{{else}}{{/ifeq}}>
+							<a href='{{ href }}'>{{ label }}</a>
+						</li>
+						{{/each}}
+
+						{{!-- Create social links for mobile navigation--}}
+						{{# each links}}
+						<li class='show-for-small-only'>
+							<a href='{{ href }}' target='_blank'>
+								<i class='icon-{{ icon }}'></i>
+								<span>{{ label }}</span>
+							</a>
+						</li>
+						{{/each}}
+					</ul>
+				</nav>
+				{{#if user}}
+				<a class='top-bar-right' href='/keystone/signout'>Sign Out</a>
+				{{/if}}
+			</section>
+		</div>
+
+		{{!-- Secondary navigation section for social links--}}
+		<section class='show-for-medium social-nav'>
+			<ul class='menu align-center'>
+				{{!-- Create social links for desktop navigation --}}
+				{{# each links}}
+				<li class=''>
+					<a href='{{ href }}' target='_blank'>
+						<i class='icon-{{ icon }}'></i>
+						<span>{{ label }}</span>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</section>
+	</header>
+
+	<div id="flash-messages">
+		{{#if messages}}
+		<div id="flash-messages" class="container">
+			{{#if messages.info}}
+			<div class="alert alert-info">
+				{{{flashMessages messages.info}}}
+			</div>
+			{{/if}}
+			{{#if messages.success}}
+			<div class="alert alert-success">
+				{{{flashMessages messages.success}}}
+			</div>
+			{{/if}}
+			{{#if messages.warning}}
+			<div class="alert alert-warning">
+				{{{flashMessages messages.warning}}}
+			</div>
+			{{/if}}
+			{{#if messages.error}}
+			<div class="alert alert-danger">
+				{{{flashMessages messages.error}}}
+			</div>
+			{{/if}}
+		</div>
+		{{/if}}
+	</div>
+	{{{body}}}
+</div>
+
+
+<footer class='site-footer'>
+	<div class='site-footer__content'>
+		<div class='site-footer__main'>
+			<div class='site-footer__about'>
+				<div class='site-footer__about__contents'>
+					<div class='site-footer__about__img'>
+						<img src="{{siteInfo.headshotUrl}}">
+					</div>
+					<div class='site-footer__about__txt'>
+						<h4> About Me</h4>
+						<p>{{{siteInfo.text.footer}}}</p>
+					</div>
+				</div>
+			</div>
+			<div class='site-footer__contact'>
+				<h4>Social</h4>
+				<ul class='site-footer__contact__list'>
+					{{# each links}}
+					<li>
+						<a href='{{ href }}' target='_blank'>
+							<i class='icon-{{ icon }}'></i>
+							<span>{{ label }}</span>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+		<div class='site-footer__links'>
+			<h4>Site Map</h4>
+			<ul>
+				{{# each navLinks}}
+				<li>
+					<a href='{{ href }}'>{{ label }}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		<p>Designed, built and maintained by <em>Thiago Pereira</em></p>
+		<p>
+			Some icons provided by <a href='https://icomoon.io/' style='color:inherit'>IcoMoon</a>
+			<br>
+			Favico provided by <a href='https://favicon.io/' style='color:inherit'>Favicon.io</a>
+		</p>
+		<p>All rights reserved</p>
+	</div>
+</footer>
+
+
+<script src="/js/vendor/jquery/jquery-2.1.4.min.js"></script>
+<script src="/js/vendor/foundation/dist/foundation.js"></script>
+<script src="/js/index.js"></script>
+
+{{{isAdminEditorJS user}}}
+</body>
+</html>

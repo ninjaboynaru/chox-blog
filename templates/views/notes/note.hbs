@@ -1,0 +1,21 @@
+<article class='site-container'>
+	<link href='/styles/vendor/prism.css' rel='stylesheet'>
+	{{log data}}
+	<header>
+		<h1>{{data.note.title}}</h1>
+		<h5>
+			{{{catSubcatList section data.note.category data.note.subcategory prefix='Written in '}}}
+
+			<!-- Written in {{data.note.category.name}}
+			{{#if data.note.subcategory}}
+			&rarr; {{data.note.subcategory.name}}
+			{{/if}} -->
+		</h5>
+		<p><a href='/note'>&larr; back to the notes</a></p>
+	</header>
+	<hr>
+	<div>
+		{{{data.note.content.body}}}
+	</div>
+	<script src='/js/vendor/prism.js'></script>
+</article>

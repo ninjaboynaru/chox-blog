@@ -1,0 +1,30 @@
+<div class='site-container'>
+	<div class='content'>
+		<div class='content__intro'>
+			<h2>Blog</h2>
+			<p>
+				Showing {{data.posts.results.length}}
+				<span style='font-weight:bold; font-style:italic'>{{data.category.name}}</span> posts
+			</p>
+		</div>
+		<div class='content__items'>
+			{{# each data.posts.results}}
+			{{>postCard this}}
+			{{/each}}
+		</div>
+		<div class='content__category'>
+			<h4>Categories</h4>
+			<ul class='primary-menu'>
+				{{{categoryMenu section
+				categories=data.categories
+				category=data.category
+				activeClass='active'
+				menuClass='primary-menu'}}}
+			</ul>
+			<hr>
+		</div>
+		<div class='content__pagination'>
+			{{>pagination}}
+		</div>
+	</div>
+</div>

@@ -8,22 +8,56 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+const keystone = require('keystone');
 
 
 /**
-	Initialises the standard view locals
-
-	The included layout depends on the navLinks array to generate
-	the navigation in the header, you may wish to change this array
-	or replace it with your own templates / logic.
+* Initialises the standard view locals
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Blog', key: 'blog', href: '/blog' },
+		{ label: 'Notes', key: 'notes', href: '/notes' },
 	];
 	res.locals.user = req.user;
 	next();
+};
+
+/**
+* Return a middleware function that sets the "locals.section" variable
+*/
+exports.initSection = function (section) {
+	return function (req, res, next) {
+		// locals.section is used to set the currently selected item in the header nav
+		res.locals.section = section;
+		next();
+	};
+};
+
+/**
+* Initialises SiteInfo locals from the database
+*/
+exports.initForeignLocals = function (req, res, next) {
+	keystone.list('SiteInfo').model.findOne().lean().then(function (siteInfo) {
+		if (siteInfo == null) {
+			next();
+			return;
+		}
+
+		res.locals.siteInfo = siteInfo;
+		res.locals.links = [];
+
+		const addLink = (label, href, icon) => res.locals.links.push({ label, href, icon });
+		addLink('GitHub', siteInfo.links.github, 'github');
+		addLink('LinkedIn', siteInfo.links.linkedin, 'linkedin');
+		addLink('Portfolio', siteInfo.links.portfolio, 'code');
+		addLink('Email', `mailto:${siteInfo.email}`, 'mail');
+
+		next();
+	}).catch(function (error) {
+		next(error);
+	});
 };
 
 

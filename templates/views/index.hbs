@@ -1,15 +1,26 @@
 {{!< default}}
-<div class="container">
-	<div class="jumbotron">
-		<h1 style='color:#337ab7; font-weight:bold'>ChoxJS</h1>
-		<h4 style='font-style:italic'>Thiago Pereira - Developer</h4>
-		<br>
-		<p>
-			I'm a FullStack developer from Florida that occasionally dabbles in the dark arts of lower level languages. I'm always learning, always improving, and maybe, just maybe, I can contribute to humanity.
+<div class="site-container">
+	<div class='site-center-1-5'>
+		<h2 class='text-center'>{{{siteInfo.text.intro.title}}}</h2>
+		<p class='page-intro'>
+			{{{siteInfo.text.intro.body}}}
 		</p>
-		<hr>
-		<p style='font-size:16px'>
-			This blog is an accumulation of my learnings, notes, and mad ramblings.
-		</p>
+	</div>
+
+	<hr class='hr-dashed site-center-1-5'>
+
+	<div class='intro-box site-center-1-5'>
+		<div class='intro-box__img'>
+			<img src='{{siteInfo.headshotUrl}}'>
+		</div>
+		<div class='intro-box__body'>
+			<p>
+				{{{siteInfo.text.about}}}
+			</p>
+			<div class='intro-box__buttons button-group expanded'>
+				<a class='button' href='mailto:{{ siteInfo.contact.email }}'>Email</a>
+				<a class='button' href='{{ siteInfo.links.portfolio }}' target='_blank'>Portfolio</a>
+			</div>
+		</div>
 	</div>
 </div>
