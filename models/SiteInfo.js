@@ -24,7 +24,7 @@ SiteInfo.add({
 		footer: { type: Types.Html },
 	},
 	siteTitle: { type: String, required: true, initial: true },
-	headshotUrl: { type: Types.Url, required: true, initial: true }
+	headshotUrl: { type: Types.Url, required: true, initial: true },
 });
 
 SiteInfo.register();
