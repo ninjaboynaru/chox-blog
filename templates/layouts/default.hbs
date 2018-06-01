@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,57 +92,56 @@
 		</div>
 		{{/if}}
 	</div>
+
 	{{{body}}}
-</div>
 
-
-<footer class='site-footer'>
-	<div class='site-footer__content'>
-		<div class='site-footer__main'>
-			<div class='site-footer__about'>
-				<div class='site-footer__about__contents'>
-					<!-- <div class='site-footer__about__img'>
-						<img src="{{siteInfo.headshotUrl}}">
-					</div> -->
-					<div class='site-footer__about__txt'>
-						<h4> About Me</h4>
-						<p>{{{siteInfo.text.footer}}}</p>
+	<footer class='site-footer'>
+		<div class='site-footer__content'>
+			<div class='site-footer__main'>
+				<div class='site-footer__about'>
+					<div class='site-footer__about__contents'>
+						<!-- <div class='site-footer__about__img'>
+							<img src="{{siteInfo.headshotUrl}}">
+						</div> -->
+						<div class='site-footer__about__txt'>
+							<h4> About Me</h4>
+							<p>{{{siteInfo.text.footer}}}</p>
+						</div>
 					</div>
 				</div>
+				<div class='site-footer__contact'>
+					<h4>Social</h4>
+					<ul class='site-footer__contact__list'>
+						{{# each links}}
+						<li>
+							<a href='{{ href }}' target='_blank'>
+								<i class='icon-{{ icon }}'></i>
+								<span>{{ label }}</span>
+							</a>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
 			</div>
-			<div class='site-footer__contact'>
-				<h4>Social</h4>
-				<ul class='site-footer__contact__list'>
-					{{# each links}}
+			<div class='site-footer__links'>
+				<h4>Site Map</h4>
+				<ul>
+					{{# each navLinks}}
 					<li>
-						<a href='{{ href }}' target='_blank'>
-							<i class='icon-{{ icon }}'></i>
-							<span>{{ label }}</span>
-						</a>
+						<a href='{{ href }}'>{{ label }}</a>
 					</li>
 					{{/each}}
 				</ul>
 			</div>
+			<p>Designed, built and maintained by <em>Thiago Pereira</em></p>
+			<p>
+				Some icons provided by <a href='https://icomoon.io/' style='color:inherit'>IcoMoon</a>
+				<br>
+				Favico provided by <a href='https://favicon.io/' style='color:inherit'>Favicon.io</a>
+			</p>
+			<p>All rights reserved</p>
 		</div>
-		<div class='site-footer__links'>
-			<h4>Site Map</h4>
-			<ul>
-				{{# each navLinks}}
-				<li>
-					<a href='{{ href }}'>{{ label }}</a>
-				</li>
-				{{/each}}
-			</ul>
-		</div>
-		<p>Designed, built and maintained by <em>Thiago Pereira</em></p>
-		<p>
-			Some icons provided by <a href='https://icomoon.io/' style='color:inherit'>IcoMoon</a>
-			<br>
-			Favico provided by <a href='https://favicon.io/' style='color:inherit'>Favicon.io</a>
-		</p>
-		<p>All rights reserved</p>
-	</div>
-</footer>
+	</footer>
 
 
 <script src="/js/vendor/jquery/jquery-2.1.4.min.js"></script>
