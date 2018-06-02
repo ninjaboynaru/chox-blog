@@ -5723,7 +5723,7 @@ ol.list-upper-roman {
   width: calc(100% - 1.875rem); }
   .post-card hr {
     margin: 12px 0; }
-  .post-card__title, .note-card__title {
+  .post-card__title, .note-card__title, .project-card__title {
     font-family: 'Righteous'; }
   .post-card__meta i {
     color: gold; }
@@ -5747,6 +5747,125 @@ ol.list-upper-roman {
       margin-right: 0.9375rem; } }
   .note-card__meta {
     font-size: 0.8rem; }
+
+.project-card__title {
+  color: white;
+  background-color: #3498db;
+  margin-bottom: 0; }
+
+.project-card__preview {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 0 1px 0 gray; }
+  .project-card__preview img {
+    width: 100%;
+    max-height: 21.875rem; }
+  .project-card__preview__label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center; }
+
+.project-card__content {
+  position: static;
+  width: 100%; }
+
+.project-card__controls {
+  text-align: right; }
+  .project-card__controls a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fefefe;
+    width: 100%; }
+    [data-whatinput='mouse'] .project-card__controls a {
+      outline: 0; }
+    .project-card__controls a:hover, .project-card__controls a:focus {
+      background-color: #2383c4;
+      color: #fefefe; }
+    @media print, screen and (min-width: 40em) {
+      .project-card__controls a {
+        width: auto;
+        padding-left: 2rem;
+        padding-right: 2rem; } }
+
+.panel-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; }
+  [data-whatinput='mouse'] .panel-menu li {
+    outline: 0; }
+  .panel-menu a,
+  .panel-menu .button {
+    line-height: 1;
+    text-decoration: none;
+    display: block;
+    padding: 0.7rem 1rem; }
+  .panel-menu input,
+  .panel-menu select,
+  .panel-menu a,
+  .panel-menu button {
+    margin-bottom: 0; }
+  .panel-menu input {
+    display: inline-block; }
+  .panel-menu li {
+    flex: 1 1 0px; }
+  .panel-menu li {
+    display: flex;
+    justify-content: center; }
+    .panel-menu li .submenu li {
+      justify-content: flex-start; }
+  @media screen and (max-width: 39.9375em) {
+    .panel-menu {
+      flex-wrap: nowrap;
+      flex-direction: column; } }
+  .panel-menu li {
+    padding: 0.1rem; }
+    .panel-menu li.active a {
+      background-color: #0665A2; }
+  .panel-menu a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fefefe;
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0; }
+    [data-whatinput='mouse'] .panel-menu a {
+      outline: 0; }
+    .panel-menu a:hover, .panel-menu a:focus {
+      background-color: #2383c4;
+      color: #fefefe; }
+    @media screen and (max-width: 39.9375em) {
+      .panel-menu a {
+        margin-bottom: 0;
+        font-size: 120%; } }
 
 .content {
   display: flex;
@@ -5969,12 +6088,12 @@ code {
 /*******************
 ** MODULE
 *******************/
-.site-center, .site-center-half, .site-center-1-5, .site-container {
+.site-center, .site-center-half, .project-card, .site-center-1-5, .site-container {
   width: 100%;
   max-width: 75rem;
   margin: 3.875rem auto; }
 
-.site-center-half {
+.site-center-half, .project-card {
   max-width: 37.5rem; }
 
 .site-center-1-5 {

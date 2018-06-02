@@ -43,6 +43,8 @@ exports = module.exports = function (app) {
 	app.get('/notes/:category?.:subcategory?', middleware.initSection('notes'), routes.views.notes.notes);
 	app.get('/notes/note/:note', middleware.initSection('notes'), routes.views.notes.note);
 
+	app.get('/projects/:category?', middleware.initSection('projects'), routes.views.projects.projects);
+
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
