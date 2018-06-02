@@ -1,0 +1,27 @@
+
+
+.panel-menu {
+	@include menu-base();
+	@include menu-expand();
+	@include menu-align(center);
+
+	@include breakpoint(small down) {
+		@include menu-direction(vertical);
+	}
+
+	li {
+		padding: 0.1rem;
+
+		&.active a {
+			background-color: #0665A2;
+		}
+	}
+
+	a {
+		@include button($expand: true);
+		@include breakpoint(small down) {
+			margin-bottom: 0;
+			font-size: 120%;
+		}
+	}
+}

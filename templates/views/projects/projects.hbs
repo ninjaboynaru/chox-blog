@@ -1,0 +1,17 @@
+<div class='site-container'>
+	<ul class='panel-menu'>
+		{{{categoryMenu section
+		categories=data.categories
+		category=data.category
+		activeClass='active'
+		menuClass='sample'
+		}}}
+	</ul>
+
+	<div>
+		{{# each data.projects}}
+		{{log this}}
+		{{>projectCard this}}
+		{{/each}}
+	</div>
+</div>
