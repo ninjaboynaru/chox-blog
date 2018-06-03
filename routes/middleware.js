@@ -53,7 +53,7 @@ exports.initForeignLocals = function (req, res, next) {
 		addLink('GitHub', siteInfo.links.github, 'github');
 		addLink('LinkedIn', siteInfo.links.linkedin, 'linkedin');
 		addLink('Portfolio', siteInfo.links.portfolio, 'code');
-		addLink('Email', `mailto:${siteInfo.email}`, 'mail');
+		addLink('Email', `mailto:${siteInfo.contact.email}`, 'mail');
 
 		next();
 	}).catch(function (error) {
