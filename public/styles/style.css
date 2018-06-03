@@ -5748,57 +5748,58 @@ ol.list-upper-roman {
   .note-card__meta {
     font-size: 0.8rem; }
 
-.project-card__title {
-  color: white;
-  background-color: #3498db;
-  margin-bottom: 0; }
-
-.project-card__preview {
-  position: relative;
-  width: 100%;
-  box-shadow: 0 0 1px 0 gray; }
-  .project-card__preview img {
-    width: 100%;
-    max-height: 21.875rem; }
-  .project-card__preview__label {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center; }
-
-.project-card__content {
-  position: static;
-  width: 100%; }
-
-.project-card__controls {
-  text-align: right; }
-  .project-card__controls a {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0 1rem 0;
-    font-family: inherit;
-    padding: 0.85em 1em;
-    -webkit-appearance: none;
-    border: 1px solid transparent;
-    border-radius: 0;
-    transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    font-size: 0.9rem;
-    line-height: 1;
-    text-align: center;
-    cursor: pointer;
+.project-card {
+  box-shadow: 0 0 6px 1px #cacaca;
+  border-radius: 6px 6px 0 0; }
+  .project-card__title {
+    color: white;
     background-color: #3498db;
-    color: #fefefe;
+    margin-bottom: 0; }
+  .project-card__preview {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 0 1px 0 gray; }
+    .project-card__preview img {
+      width: 100%;
+      max-height: 21.875rem;
+      border-radius: 6px 6px 0 0; }
+    .project-card__preview__label {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center; }
+  .project-card__content {
+    position: static;
     width: 100%; }
-    [data-whatinput='mouse'] .project-card__controls a {
-      outline: 0; }
-    .project-card__controls a:hover, .project-card__controls a:focus {
-      background-color: #2383c4;
-      color: #fefefe; }
-    @media print, screen and (min-width: 40em) {
-      .project-card__controls a {
-        width: auto;
-        padding-left: 2rem;
-        padding-right: 2rem; } }
+  .project-card__controls {
+    text-align: right; }
+    .project-card__controls a {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0 1rem 0;
+      font-family: inherit;
+      padding: 0.85em 1em;
+      -webkit-appearance: none;
+      border: 1px solid transparent;
+      border-radius: 0;
+      transition: background-color 0.25s ease-out, color 0.25s ease-out;
+      font-size: 0.9rem;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fefefe;
+      width: 100%; }
+      [data-whatinput='mouse'] .project-card__controls a {
+        outline: 0; }
+      .project-card__controls a:hover, .project-card__controls a:focus {
+        background-color: #2383c4;
+        color: #fefefe; }
+      @media print, screen and (min-width: 40em) {
+        .project-card__controls a {
+          width: auto;
+          padding-left: 2rem;
+          padding-right: 2rem; } }
 
 .panel-menu {
   padding: 0;

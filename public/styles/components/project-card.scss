@@ -1,6 +1,9 @@
 
 .project-card {
+	$card-radius: 6px;
 	@extend .site-center-half;
+	box-shadow: 0 0 6px 1px $medium-gray;
+	border-radius: $card-radius $card-radius 0 0;
 
 	&__title {
 		@extend .post-card__title;
@@ -16,6 +19,7 @@
 		img {
 			width: 100%;
 			max-height: rem-calc(350px);
+			border-radius: $card-radius $card-radius 0 0;
 		}
 
 		&__label {

@@ -16,7 +16,7 @@ const keystone = require('keystone');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
+		{ label: 'About', key: 'home', href: '/' },
 		{ label: 'Blog', key: 'blog', href: '/blog' },
 		{ label: 'Notes', key: 'notes', href: '/notes' },
 		{ label: 'Portfolio', key: 'projects', href: '/projects' },
