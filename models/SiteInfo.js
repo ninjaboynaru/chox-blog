@@ -25,6 +25,12 @@ SiteInfo.add({
 	},
 	siteTitle: { type: String, required: true, initial: true },
 	headshotUrl: { type: Types.Url, required: true, initial: true },
+	ogTags: {
+		title: { type: String },
+		type: { type: String },
+		image: { type: Types.Url },
+		url: { type: Types.Url },
+	},
 });
 
 SiteInfo.register();

@@ -55,6 +55,8 @@ exports.initForeignLocals = function (req, res, next) {
 		addLink('Portfolio', siteInfo.links.portfolio, 'code');
 		addLink('Email', `mailto:${siteInfo.contact.email}`, 'mail');
 
+		res.locals.ogTags = siteInfo.ogTags;
+
 		next();
 	}).catch(function (error) {
 		next(error);
