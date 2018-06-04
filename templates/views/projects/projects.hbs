@@ -1,4 +1,7 @@
 <div class='site-container'>
+	<div>
+		<p class='project-page__title'>Select a project to expand it</p>
+	</div>
 	<ul class='panel-menu'>
 		{{{categoryMenu section
 		categories=data.categories
@@ -8,7 +11,7 @@
 		}}}
 	</ul>
 
-	<div>
+	<div class='project-card__group'>
 		{{# each data.projects}}
 		{{>projectCard this}}
 		{{/each}}

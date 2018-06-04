@@ -1,9 +1,27 @@
 
+.project-page__title {
+	text-align: center;
+}
+.project-card__group {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
 .project-card {
 	$card-radius: 6px;
-	@extend .site-center-half;
+
 	box-shadow: 0 0 6px 1px $medium-gray;
 	border-radius: $card-radius $card-radius 0 0;
+	margin: $global-margin auto;
+	width: 100%;
+
+
+	@include breakpoint(rem-calc(620px)) {
+		width: 45%;
+	}
+	@include breakpoint(rem-calc(920px)) {
+		width: 30%;
+	}
 
 	&__title {
 		@extend .post-card__title;
@@ -13,13 +31,17 @@
 	}
 
 	&__preview {
+		display: block; // to get rid of extra space at bottom caused by <button>
 		position: relative;
 		width: 100%;
+		padding-top: 100%;	// padding relative to width (1:1 aspect ratio)
 		box-shadow: 0 0 1px 0 gray;
-		img {
-			width: 100%;
-			max-height: rem-calc(350px);
-			border-radius: $card-radius $card-radius 0 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+
+		&:hover {
+			cursor: pointer;
 		}
 
 		&__label {
