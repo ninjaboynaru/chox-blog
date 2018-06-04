@@ -24,12 +24,14 @@ SiteInfo.add({
 		footer: { type: Types.Html },
 	},
 	siteTitle: { type: String, required: true, initial: true },
+	siteDescription: { type: String },
 	headshotUrl: { type: Types.Url, required: true, initial: true },
 	ogTags: {
 		title: { type: String },
 		type: { type: String },
 		image: { type: Types.Url },
 		url: { type: Types.Url },
+		description: { type: String },
 	},
 });
 
