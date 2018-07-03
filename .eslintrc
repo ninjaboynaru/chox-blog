@@ -1,10 +1,10 @@
 {
     "env": {
-        "jquery": true    
+        "jquery": true
     },
     "extends": "keystone",
     "rules": {
-        "line-break-style": 0,
+        "linebreak-style": 0,
         "no-new-require": 0
     }
 }
