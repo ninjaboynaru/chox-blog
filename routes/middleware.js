@@ -22,6 +22,8 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Portfolio', key: 'projects', href: '/projects' },
 	];
 	res.locals.user = req.user;
+	res.locals.beaconKey = process.env.BEACON_KEY;
+	res.locals.beaconUrl = process.env.BEACON_URL;
 	next();
 };
 
